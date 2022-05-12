@@ -10,9 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate some file
-        run: git log > log
+        run: |
+          echo "Hello from 1" > log
+          git log | head -20 >> log
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
         with:
           name: my-log
           path: log
+  call_second:
+    uses: c-mauderer/github-ci-2/.github/workflows/two.yml@main
+    with:
+      use_artifact: True
