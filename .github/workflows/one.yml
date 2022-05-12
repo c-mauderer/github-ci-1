@@ -19,6 +19,7 @@ jobs:
           name: my-log
           path: log
   call_second:
+    needs: build
     uses: c-mauderer/github-ci-2/.github/workflows/two.yml@main
     with:
       use_artifact: True
