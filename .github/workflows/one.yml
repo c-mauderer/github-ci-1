@@ -10,9 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate some file
+        run: pwd
+        run: ls
         run: |
           echo "Hello from 1" > log
           git log | head -20 >> log
+        run: pwd
+        run: ls
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
         with:
