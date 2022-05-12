@@ -26,4 +26,4 @@ jobs:
     needs: build
     uses: c-mauderer/github-ci-2/.github/workflows/two.yml@main
     with:
-      use_artifact: True
+      called_from_ci1: true
