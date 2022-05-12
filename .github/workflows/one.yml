@@ -7,12 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          ls
-          pwd
+      - name: Generate some file
+        run: git log > log
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-log
+          path: log
