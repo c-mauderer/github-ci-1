@@ -12,11 +12,11 @@ jobs:
       - name: Generate some file
         run: |
           pwd
-          ls
+          ls -R
           echo "Hello from 1" > log
           git log | head -20 >> log
           pwd
-          ls
+          ls -R
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
         with:
