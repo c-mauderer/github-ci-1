@@ -34,6 +34,8 @@ jobs:
       arch: xxx
       action-repo: ${{ github.action_repository }}
   archive:
+    needs: call_second
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/cache@v3
         id: cache
