@@ -28,10 +28,8 @@ jobs:
         with:
           name: log-artifact
           path: log
-  call_second:
-    needs: build
-    uses: c-mauderer/github-ci-2/.github/workflows/work.yml@main
-    with:
-      arch: xxx
-      action-repo: c-mauderer/github-ci-2
-      cache-hash: ${{ github.sha }}
+      - uses: c-mauderer/github-ci-2/.github/workflows/work.yml@main
+        with:
+          arch: xxx
+          action-repo: c-mauderer/github-ci-2
+          cache-hash: ${{ github.sha }}
