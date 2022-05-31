@@ -33,17 +33,3 @@ jobs:
     with:
       arch: xxx
       action-repo: ${{ github.action_repository }}
-  archive:
-    needs: call_second
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: log
-          key: ${{ runner.os }}-xxx
-      - name: Archive artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: log-artifact-after-work
-          path: log
