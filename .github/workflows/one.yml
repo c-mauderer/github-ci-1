@@ -9,18 +9,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: log
-          key: ${{ github.sha }}-${{ runner.os }}-xxx
       - uses: actions/checkout@v3
+        with:
+          path: one
+      - uses: actions/checkout@v3
+        repository: c-mauderer/github-ci-2
+        with:
+          path: two
       - name: Generate some file
         run: |
           pwd
           ls -R
           echo "Hello from 1" > log
-          git log | head -20 >> log
+          git -C one log | head -20 >> log
           pwd
           ls -R
       - name: Archive artifacts
@@ -28,8 +29,7 @@ jobs:
         with:
           name: log-artifact
           path: log
-      - uses: c-mauderer/github-ci-2/.github/workflows/work.yml@main
+      - uses: ./two/.github/actions/work
         with:
           arch: xxx
-          action-repo: c-mauderer/github-ci-2
-          cache-hash: ${{ github.sha }}
+          sources-two: two
