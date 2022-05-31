@@ -3,6 +3,7 @@ name: CI-1
 on:
   pull_request:
   workflow_dispatch:
+  push:
 
 jobs:
   build:
@@ -32,4 +33,4 @@ jobs:
     uses: c-mauderer/github-ci-2/.github/workflows/work.yml@main
     with:
       arch: xxx
-      action-repo: ${{ github.action_repository }}
+      action-repo: c-mauderer/github-ci-2
