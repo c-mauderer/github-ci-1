@@ -34,4 +34,4 @@ jobs:
     with:
       arch: xxx
       action-repo: c-mauderer/github-ci-2
-      cache-key: ${{ github.sha }}-${{ runner.os }}-xxx
+      cache-hash: ${{ github.sha }}
