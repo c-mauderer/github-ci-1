@@ -13,8 +13,8 @@ jobs:
         with:
           path: one
       - uses: actions/checkout@v3
-        repository: c-mauderer/github-ci-2
         with:
+          repository: c-mauderer/github-ci-2
           path: two
       - name: Generate some file
         run: |
