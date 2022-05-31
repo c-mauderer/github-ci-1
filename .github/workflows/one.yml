@@ -29,6 +29,7 @@ jobs:
           path: log
   call_second:
     needs: build
-    uses: c-mauderer/github-ci-2/.github/workflows/work.yml@main
-    with:
-      arch: xxx
+    steps:
+      - uses: c-mauderer/github-ci-2/.github/workflows/work.yml@main
+        with:
+          arch: xxx
