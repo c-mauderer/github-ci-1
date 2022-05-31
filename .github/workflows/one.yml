@@ -32,7 +32,7 @@ jobs:
     uses: c-mauderer/github-ci-2/.github/workflows/work.yml@main
     with:
       arch: xxx
-      action-repo: ${{ github.actions_repository }}
+      action-repo: ${{ github.action_repository }}
   build:
     steps:
       - uses: actions/cache@v3
